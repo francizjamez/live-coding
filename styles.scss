@@ -34,7 +34,8 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2rem 5rem;
+  z-index: 1;
 
   .logo {
     display: flex;
@@ -53,13 +54,23 @@ body {
   }
 }
 
+.colored {
+  background: linear-gradient(to right, #c7fc29 0%, #ca4fbe 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .content {
   width: 60%;
   background-color: rgba(255, 255, 255, 0.24);
+
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: relative;
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
   .content-wrapper {
     height: 60%;
     width: 60%;
@@ -75,12 +86,6 @@ body {
       gap: 2rem;
       h1 {
         font-size: 3rem;
-
-        span {
-          background: linear-gradient(to right, #c7fc29 0%, #ca4fbe 100%);
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
       }
       button {
         height: 3rem;
@@ -102,17 +107,20 @@ body {
 }
 
 .extra {
-  width: 40%;
+  position: absolute;
+  display: flex;
+  align-items: center;
 
-  position: relative;
+  bottom: 6rem;
+  right: 8rem;
+
   .scroll-btn {
     height: 4rem;
     width: 4rem;
-    position: absolute;
-    bottom: 7rem;
-    right: 10rem;
     background: none;
+    border: 1px solid white;
     border-radius: 4rem;
     font-size: 2rem;
+    cursor: pointer;
   }
 }
